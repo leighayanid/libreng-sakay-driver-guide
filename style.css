@@ -276,6 +276,14 @@
 .slidev-layout.cover, .slidev-layout.section {
   display: grid; align-content: center;
 }
+/* The cover and the two dividers are the only slides with no screen to read,
+   so the title is the slide. At 5.094rem it filled barely 40% of its column
+   and left the rest as dead white; this runs it out to the edge of the words
+   column, where it reads from the back of the room. Tighter leading and
+   tracking because the defaults are tuned for text half this size. */
+.slidev-layout.cover h1, .slidev-layout.section h1 {
+  font-size: 9.2rem; line-height: 0.98; letter-spacing: -.035em;
+}
 /* words left, screens right — the right half was dead space otherwise */
 .split {
   display: grid; grid-template-columns: 1fr auto; gap: 4.702rem; align-items: center;
@@ -291,7 +299,11 @@
 .section-kiosk { --accent: var(--kiosk); --slide-accent: var(--kiosk); }
 /* content slides carry the module colour on the top rule too */
 .kiosk-page { --slide-accent: var(--kiosk); }
-.slidev-layout.section h1 { border-left: 7.8px solid var(--accent); padding-left: 1.763rem; }
+.slidev-layout.section h1 {
+  /* the bar is scaled with the title — 7.8px beside 147px type read as a
+     stray hairline rather than as the rule it is */
+  border-left: 13px solid var(--accent); padding-left: 2.35rem;
+}
 
 /* the divider's label does the same job as .eyebrow, so it matches it */
 .modnum {
