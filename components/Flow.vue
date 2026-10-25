@@ -10,10 +10,10 @@ import { useNav } from '@slidev/client'
 const { clicks } = useNav()
 
 const stages = [
-  { driver: 'Hold to start trip', kiosk: 'Trip started · lumipat sa tap screen' },
+  { driver: 'Hold to start trip', kiosk: 'Trip started · tap screen up' },
   { driver: 'On the road', kiosk: 'Tap your pass to board' },
-  { driver: 'Depart · Arrive', kiosk: 'Bawat tap, dagdag sa bilang' },
-  { driver: 'Hold to end trip', kiosk: 'Trip ended · nag-unbind' },
+  { driver: 'Depart · Arrive', kiosk: 'Every tap adds to the count' },
+  { driver: 'Hold to end trip', kiosk: 'Trip ended · unbound' },
 ]
 
 const on = computed(() => (i: number) => clicks.value >= i + 1)

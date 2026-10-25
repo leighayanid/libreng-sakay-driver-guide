@@ -3,7 +3,7 @@ theme: default
 title: Libreng Sakay — Driver & Kiosk
 info: |
   ## Libreng Sakay — Driver & Kiosk
-  Paano gumagana ang driver app at ang bus kiosk. Isang operation kada slide.
+  How the driver app and the bus kiosk work. One operation per slide.
 
   Prepared by Leigh Dinaya — Computer Programmer, Provincial Government of Bataan.
 author: Leigh Dinaya
@@ -30,7 +30,7 @@ class: cover
 # Driver App<br>and Bus Kiosk
 
 <p class="lede" style="max-width:41.14rem;margin-top:1.57rem">
-Ano ang mangyayari kapag pinindot. Isang operation kada slide.
+What happens when you press it. One operation per slide.
 </p>
 
 </div>
@@ -44,8 +44,8 @@ Ano ang mangyayari kapag pinindot. Isang operation kada slide.
 </div>
 
 <!--
-Magandang umaga. Dalawang device lang ang pag-uusapan natin ngayon:
-ang app sa telepono ng driver, at ang kiosk na nakakabit sa bus.
+Good morning. There are only two devices we are talking about today:
+the app on the driver's phone, and the kiosk mounted in the bus.
 -->
 
 ---
@@ -61,7 +61,7 @@ routeAlias: contents
   <div class="mod mod-driver">
     <span class="tag">Module 01</span>
     <h3>Driver App</h3>
-    <p>Sign in, simulan ang trip, markahan ang mga hintuan, tapusin ang shift.</p>
+    <p>Sign in, start the trip, mark the stops, end the shift.</p>
     <Fan :h="470" :shots="[
       'driver/03-next-shift.png',
       'driver/05-on-the-road.png',
@@ -71,7 +71,7 @@ routeAlias: contents
   <div class="mod mod-kiosk">
     <span class="tag">Module 02</span>
     <h3>Bus Kiosk</h3>
-    <p>I-enroll sa bus, tanggapin ang mga tap, bilangin ang sumasakay.</p>
+    <p>Enroll it to the bus, accept the taps, count who boards.</p>
     <Fan kiosk pos :h="470" :shots="[
       'kiosk/04-waiting.png',
       'kiosk/05-tap-board.png',
@@ -80,11 +80,11 @@ routeAlias: contents
   </div>
 </div>
 
-<div class="hint">Magkadugtong ang dalawa — hindi magsisimula ang trip kung walang online na kiosk.</div>
+<div class="hint">The two are linked — the trip will not start without an online kiosk.</div>
 
 <!--
-Magkadugtong ang dalawa. Hindi magsisimula ang trip kung walang online na kiosk —
-iyan ang pinakamadalas na problema, kaya diinan natin mamaya.
+The two are linked. The trip will not start without an online kiosk —
+that is the most common problem, so we will come back to it.
 -->
 
 ---
@@ -94,20 +94,3 @@ src: ./pages/01-driver.md
 ---
 src: ./pages/02-kiosk.md
 ---
-
----
-clicks: 4
----
-
-<div class="eyebrow">How they connect</div>
-
-## One trip, two devices
-
-<Flow />
-
-<div class="hint">Ang driver ang nagbubukas at nagsasara. Ang kiosk ang sumusunod.</div>
-
-<!--
-Buod ng lahat. Ang driver ang nagbubukas at nagsasara ng trip. Ang kiosk ang sumusunod.
-Apat na hakbang lang, paulit-ulit sa buong shift.
--->

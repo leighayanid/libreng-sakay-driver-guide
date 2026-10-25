@@ -158,5 +158,11 @@ layout moves, the marks on that slide need re-checking.
 
 ## Language
 
-Taglish, matching `libreng-sakay-guide`: Tagalog for the explanation, English
-kept verbatim for anything actually printed on a button.
+English throughout — captions, callout labels, hint lines and presenter notes.
+Anything printed on a button is quoted verbatim from the app, which is English
+too, so the two never disagree.
+
+The demo data inside the screenshots is the exception: the dispatch messages on
+the Messages slides are Tagalog, because they are baked into the PNGs. They come
+from `tools/seed-deck.php` and `tools/capture-driver-shots.mjs`, so changing the
+language there means re-seeding and re-capturing those shots.

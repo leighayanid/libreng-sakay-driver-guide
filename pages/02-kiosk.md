@@ -11,7 +11,7 @@ routeAlias: kiosk
 
 # Bus Kiosk
 
-<p class="lede" style="max-width:37.22rem">Ang device na binibilang ang bawat sumasakay.</p>
+<p class="lede" style="max-width:37.22rem">The device that counts everyone who boards.</p>
 
 </div>
 
@@ -24,7 +24,7 @@ routeAlias: kiosk
 </div>
 
 <!--
-Ikalawang module. Ito ang device sa bus na bumibilang ng bawat sumasakay.
+Second module. This is the device in the bus that counts everyone who boards.
 -->
 
 ---
@@ -37,18 +37,18 @@ clicks: 3
 ## Enroll the kiosk to the bus
 
 <Walk kiosk pos :frames="[
-  { src: 'kiosk/01-enroll.png', cap: 'Blangko — patay ang button' },
-  { src: 'kiosk/02-enroll-code.png', cap: 'Code mula sa admin',
+  { src: 'kiosk/01-enroll.png', cap: 'Blank — button is dead' },
+  { src: 'kiosk/02-enroll-code.png', cap: 'Code from the admin',
     ring: { x: 50, y: 60.5, w: 93.2, h: 11.2 }, tap: { x: 50.1, y: 73.1 } },
-  { src: 'kiosk/04-waiting.png', cap: 'Naka-bind na sa bus',
+  { src: 'kiosk/04-waiting.png', cap: 'Bound to the bus',
     ring: { x: 50, y: 51.1, w: 78.1, h: 15, tone: 'good' } },
 ]" />
 
-<div class="hint warn">Isang beses lang magagamit ang code. Tinanggihan? Humingi ng bago.</div>
+<div class="hint warn">A code works once only. Rejected? Ask for a new one.</div>
 
 <!--
-Isang beses lang magagamit ang code, at galing ito sa admin.
-Tinanggihan? Huwag ulit-ulitin — humingi na ng bago.
+A code works once only, and it comes from the admin.
+Rejected? Do not keep retrying it — ask for a new one.
 -->
 
 ---
@@ -61,15 +61,15 @@ clicks: 1
 ## Two waiting screens
 
 <Walk kiosk pos :frames="[
-  { src: 'kiosk/03-no-shift.png', cap: 'Walang shift ang bus ngayon' },
-  { src: 'kiosk/04-waiting.png', cap: 'May shift — hinihintay ang driver' },
+  { src: 'kiosk/03-no-shift.png', cap: 'No shift for this bus today' },
+  { src: 'kiosk/04-waiting.png', cap: 'Shift set — waiting for the driver' },
 ]" />
 
-<div class="hint">Walang pipindutin dito. Hintayin lang ang driver.</div>
+<div class="hint">Nothing to press here. Just wait for the driver.</div>
 
 <!--
-Walang pipindutin dito, kaya huwag silang mag-alala.
-Kung "no shift" ang nakalagay, problema iyon sa schedule, hindi sa kiosk.
+Nothing to press here, so there is nothing for them to worry about.
+If it says no shift, that is a schedule problem, not a kiosk problem.
 -->
 
 ---
@@ -82,16 +82,16 @@ clicks: 2
 ## Tap your pass to board
 
 <Walk kiosk pos :frames="[
-  { src: 'kiosk/05-tap-board.png', cap: 'Idikit sa likod ng telepono', tap: { x: 50, y: 36.8 } },
+  { src: 'kiosk/05-tap-board.png', cap: 'Hold the phone to the pad', tap: { x: 50, y: 36.8 } },
   { src: 'kiosk/06-tap-ok.png', cap: 'Welcome aboard',
-    ring: { x: 50, y: 71.2, w: 87.4, h: 19.7, tone: 'good', text: 'Pangalan · uri · oras' } },
+    ring: { x: 50, y: 71.2, w: 87.4, h: 19.7, tone: 'good', text: 'Name · type · time' } },
 ]" />
 
-<div class="hint">Awtomatikong babalik sa tap screen. Walang pipindutin.</div>
+<div class="hint">It returns to the tap screen on its own. Nothing to press.</div>
 
 <!--
-Idikit sa likod ng telepono. Awtomatikong babalik sa tap screen —
-walang kailangang pindutin ang pasahero o ang driver.
+Hold the back of the phone to the pad. It returns to the tap screen on its own —
+neither the passenger nor the driver has to press anything.
 -->
 
 ---
@@ -104,16 +104,16 @@ clicks: 2
 ## Ride denied
 
 <Walk kiosk pos :frames="[
-  { src: 'kiosk/05-tap-board.png', cap: 'Parehong tap', tap: { x: 50, y: 36.8 } },
-  { src: 'kiosk/07-tap-denied.png', cap: 'Walang naitala',
-    ring: { x: 50, y: 60, w: 91.2, h: 15.2, tone: 'stop', text: 'Dahilan' } },
+  { src: 'kiosk/05-tap-board.png', cap: 'Same tap', tap: { x: 50, y: 36.8 } },
+  { src: 'kiosk/07-tap-denied.png', cap: 'Nothing recorded',
+    ring: { x: 50, y: 60, w: 91.2, h: 15.2, tone: 'stop', text: 'The reason' } },
 ]" />
 
-<div class="hint">Basahin ang dahilan sa screen bago sagutin ang pasahero.</div>
+<div class="hint">Read the reason on the screen before answering the passenger.</div>
 
 <!--
-Basahin muna ang dahilan sa screen bago sagutin ang pasahero.
-Iba-iba ang dahilan: expired, hindi pa verified, hindi tugma ang uri.
+Read the reason on the screen first before answering the passenger.
+The reasons differ: expired, not yet verified, wrong pass type.
 -->
 
 ---
@@ -126,14 +126,14 @@ clicks: 1
 ## Already boarded, and tapped out
 
 <Walk kiosk pos :frames="[
-  { src: 'kiosk/10-already-boarded.png', cap: 'Na-tap ulit agad — hindi binibilang' },
-  { src: 'kiosk/11-tapped-out.png', cap: 'Tap out — bumaba ang bilang' },
+  { src: 'kiosk/10-already-boarded.png', cap: 'Tapped again — not counted' },
+  { src: 'kiosk/11-tapped-out.png', cap: 'Tap out — count goes down' },
 ]" />
 
 <!--
-Dalawang resultang madalas makita.
-Na-tap ulit agad — hindi doble ang bilang, protektado iyon.
-Tap out — bumababa ang bilang, at makikita kung gaano siya katagal sakay.
+Two results you will see often.
+Tapped again right away — the count does not double, that is protected.
+Tap out — the count goes down, and you can see how long they were aboard.
 -->
 
 ---
@@ -145,14 +145,14 @@ class: tint kiosk-page
 ## Trip not started
 
 <Walk kiosk pos :frames="[
-  { src: 'kiosk/08-trip-not-started.png', cap: 'Hindi pa nagsisimula ang driver' },
+  { src: 'kiosk/08-trip-not-started.png', cap: 'Driver has not started yet' },
 ]" />
 
-<div class="hint">Walang na-verify, walang naitala. Paghintayin lang.</div>
+<div class="hint">Nothing verified, nothing recorded. Just have them wait.</div>
 
 <!--
-Hindi pa nagsisimula ang driver. Walang na-verify, walang naitala.
-Paghintayin lang ang pasahero — hindi ito sira.
+The driver has not started the trip yet. Nothing verified, nothing recorded.
+Just have the passenger wait — it is not broken.
 -->
 
 ---
@@ -166,15 +166,15 @@ clicks: 3
 
 <Walk kiosk pos :frames="[
   { src: 'kiosk/05-tap-board.png', tour: [
-    { x: 42.6, y: 85.5, w: 21.2, h: 6.2, text: 'Onboard ngayon', at: 'left' },
-    { x: 59.4, y: 85.4, w: 15.2, h: 6.1, text: 'Tunog', at: 'right' },
-    { x: 50, y: 93.7, w: 95.3, h: 9.2, text: 'Bus · ruta', at: 'bottom' },
+    { x: 42.6, y: 85.5, w: 21.2, h: 6.2, text: 'Onboard now', at: 'left' },
+    { x: 59.4, y: 85.4, w: 15.2, h: 6.1, text: 'Sound', at: 'right' },
+    { x: 50, y: 93.7, w: 95.3, h: 9.2, text: 'Bus · route', at: 'bottom' },
   ] },
 ]" />
 
 <!--
-Tatlong bagay sa ilalim: bilang ng nakasakay ngayon, tunog on o off,
-at kung anong bus at ruta. Ito ang titingnan kung tama ba ang device sa tamang bus.
+Three things along the bottom: how many are aboard now, sound on or off,
+and which bus and route. This is what you check to confirm the device is on the right bus.
 -->
 
 ---
@@ -186,13 +186,13 @@ class: tint kiosk-page
 ## Losing signal
 
 <Walk kiosk pos :frames="[
-  { src: 'kiosk/13-connected.png', cap: 'Connected — nag-sync na' },
+  { src: 'kiosk/13-connected.png', cap: 'Connected — synced' },
 ]" />
 
-<div class="hint warn">Huwag patayin ang kiosk sa dead zone — doon nakaimbak ang mga tap.</div>
+<div class="hint warn">Do not switch the kiosk off in a dead zone — the taps are held inside it.</div>
 
 <!--
-Mahalaga ito. Kapag walang signal, iniimbak muna ng kiosk ang mga tap,
-tapos sabay-sabay ipapadala paglabas sa dead zone.
-Kaya huwag patayin ang kiosk sa dead zone — nandoon pa ang mga hindi pa naipapadalang tap.
+This one matters. With no signal the kiosk holds the taps itself,
+then sends them all at once on the way out of the dead zone.
+So do not switch the kiosk off in a dead zone — the taps it has not sent yet are still in there.
 -->

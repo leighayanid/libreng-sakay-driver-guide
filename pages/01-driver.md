@@ -11,7 +11,7 @@ routeAlias: driver
 
 # Driver App
 
-<p class="lede" style="max-width:37.22rem">Sign in, simulan ang trip, markahan ang hintuan, tapusin ang shift.</p>
+<p class="lede" style="max-width:37.22rem">Sign in, start the trip, mark the stops, end the shift.</p>
 
 </div>
 
@@ -24,7 +24,7 @@ routeAlias: driver
 </div>
 
 <!--
-Dalawang module tayo. Simulan sa driver app — ito ang hawak nila araw-araw.
+Two modules. We start with the driver app — this is the one they hold every day.
 -->
 
 ---
@@ -36,15 +36,15 @@ clicks: 2
 ## Sign in with Bataeño Pass
 
 <Walk :frames="[
-  { src: 'driver/01-login.png', cap: 'Buksan ang app', tap: { x: 50, y: 71.5 } },
-  { src: 'driver/02-standby.png', cap: 'Standby — walang shift pa',
-    ring: { x: 50, y: 93.4, w: 99.2, h: 9.6, text: 'Limang tab' } },
+  { src: 'driver/01-login.png', cap: 'Open the app', tap: { x: 50, y: 71.5 } },
+  { src: 'driver/02-standby.png', cap: 'Standby — no shift yet',
+    ring: { x: 50, y: 93.4, w: 99.2, h: 9.6, text: 'Five tabs' } },
 ]" />
 
 <!--
-Iisa lang ang login: Bataeño Pass. Walang hiwalay na password para sa driver app.
-Hindi makapasok? Tingnan muna kung naka-assign siya sa isang bus — hindi password ang madalas na problema.
-Limang tab sa ilalim. Babalikan natin lahat.
+There is only one login: Bataeño Pass. No separate password for the driver app.
+Cannot get in? Check first whether they are assigned to a bus — the password is rarely the problem.
+Five tabs along the bottom. We will come back to all of them.
 -->
 
 ---
@@ -59,14 +59,14 @@ clicks: 2
 <Walk :frames="[
   { src: 'driver/03-next-shift.png', cap: 'Next shift', tap: { x: 50.8, y: 83.6, hold: true } },
   { src: 'driver/05-on-the-road.png', cap: 'On the road',
-    ring: { x: 35.4, y: 68.6, w: 62.4, h: 13.5, tone: 'good', text: 'Tumatakbo na' } },
+    ring: { x: 35.4, y: 68.6, w: 62.4, h: 13.5, tone: 'good', text: 'Trip is running' } },
 ]" />
 
-<div class="hint">Hold, hindi tap — para hindi magsimula habang nasa bulsa.</div>
+<div class="hint">Hold, not tap — so it cannot start while in a pocket.</div>
 
 <!--
-Hold, hindi tap — pansinin ang umiikot na singsing. Ganoon kahaba.
-Sadya itong ginawang mahirap: hindi dapat magsimula ang trip habang nasa bulsa ang telepono.
+Hold, not tap — watch the ring fill. That is how long it takes.
+It was made awkward on purpose: the trip must not start while the phone is in a pocket.
 -->
 
 ---
@@ -78,17 +78,17 @@ clicks: 2
 ## An online kiosk is required
 
 <Walk :frames="[
-  { src: 'driver/03-next-shift.png', cap: 'Hawak ang button', tap: { x: 50.8, y: 83.6, hold: true } },
+  { src: 'driver/03-next-shift.png', cap: 'Holding the button', tap: { x: 50.8, y: 83.6, hold: true } },
   { src: 'driver/04-no-kiosk.png', cap: 'Keep holding to start…',
-    ring: { x: 50, y: 17, w: 91.7, h: 7.8, tone: 'stop', text: 'Walang kiosk' } },
+    ring: { x: 50, y: 17, w: 91.7, h: 7.8, tone: 'stop', text: 'No kiosk' } },
 ]" />
 
-<div class="hint warn">Walang kiosk, walang mabibilang na pasahero sa buong trip.</div>
+<div class="hint warn">No kiosk, no passenger count for the whole trip.</div>
 
 <!--
-Ito ang pinakamadalas na tawag sa support.
-Walang online na kiosk, walang masisimulan. Dapat naka-bukas at naka-enroll na ang kiosk bago pa man.
-Itanong sa kanila: sino ang nagbubukas ng kiosk sa umaga?
+This is the most common call to support.
+No online kiosk, nothing to start. The kiosk has to be switched on and enrolled beforehand.
+Ask them: who switches the kiosk on in the morning?
 -->
 
 ---
@@ -103,15 +103,15 @@ clicks: 4
 <Walk :frames="[
   { src: 'driver/05-on-the-road.png', tour: [
     { x: 21.1, y: 67.4, w: 23.4, h: 3.2, text: 'On time', at: 'left' },
-    { x: 48.3, y: 67.4, w: 26.9, h: 3.2, text: 'Mula sa kiosk', at: 'right' },
+    { x: 48.3, y: 67.4, w: 26.9, h: 3.2, text: 'From the kiosk', at: 'right' },
     { x: 46, y: 82.1, w: 91.2, h: 11.4, text: 'Current · next stop', at: 'left' },
-    { x: 50, y: 93.1, w: 91.7, h: 7.4, tone: 'good', text: 'Susunod na gagawin', at: 'right' },
+    { x: 50, y: 93.1, w: 91.7, h: 7.4, tone: 'good', text: 'What to do next', at: 'right' },
   ] },
 ]" />
 
 <!--
-Apat na bagay lang ang nasa screen: on-time status, bilang galing sa kiosk, current at next stop,
-at ang susunod na gagawin. Huwag nang hanapin ang iba — wala na.
+Only four things on the screen: on-time status, the count from the kiosk, current and next stop,
+and what to do next. Do not look for anything else — there is nothing else.
 -->
 
 ---
@@ -130,11 +130,11 @@ clicks: 4
     ring: { x: 25.3, y: 71.7, w: 31.9, h: 3.2, tone: 'good', text: '13 min ahead' } },
 ]" />
 
-<div class="hint">Ginagamit ng passenger tracker ang mga oras na ito. I-tap agad.</div>
+<div class="hint">The passenger tracker runs on these times. Tap them right away.</div>
 
 <!--
-Ito ang pinakaimportanteng slide. Ang oras na ito mismo ang nakikita ng pasahero sa tracker.
-I-tap agad pagdating at pag-alis — hindi mamaya, hindi sabay-sabay sa dulo ng biyahe.
+This is the most important slide. These exact times are what passengers see in the tracker.
+Tap on arrival and on departure right away — not later, not all at once at the end of the run.
 -->
 
 ---
@@ -147,16 +147,16 @@ clicks: 2
 ## Hold to end trip
 
 <Walk :frames="[
-  { src: 'driver/07-arrival-recorded.png', cap: 'Huling hintuan', tap: { x: 50, y: 93.6, hold: true } },
+  { src: 'driver/07-arrival-recorded.png', cap: 'Last stop', tap: { x: 50, y: 93.6, hold: true } },
   { src: 'driver/08-trip-completed.png', cap: 'Trip completed',
-    ring: { x: 28.4, y: 34.9, w: 48.4, h: 12.9, tone: 'good', text: 'Minuto · hintuan · pasahero' } },
+    ring: { x: 28.4, y: 34.9, w: 48.4, h: 12.9, tone: 'good', text: 'Minutes · stops · passengers' } },
 ]" />
 
-<div class="hint warn">Laging tapusin. Kung hindi, nasa daan pa rin ang bus sa system.</div>
+<div class="hint warn">Always end it. Otherwise the bus is still on the road in the system.</div>
 
 <!--
-Laging tapusin ang trip. Kung hindi, nasa daan pa rin ang bus sa system,
-at mali ang ETA na nakikita ng mga naghihintay na pasahero.
+Always end the trip. Otherwise the bus is still on the road in the system,
+and the ETA waiting passengers see is wrong.
 -->
 
 ---
@@ -174,11 +174,11 @@ clicks: 2
   ] },
 ]" />
 
-<div class="hint">Ang pagtapos ng isang leg ay hindi pagtapos ng shift.</div>
+<div class="hint">Ending a leg is not ending the shift.</div>
 
 <!--
-Linawin ito: ang pagtapos ng isang leg ay hindi pagtapos ng shift. Dalawang magkaibang button.
-May susunod pang byahe? Hold to start next leg. Uwian na? End shift.
+Make this clear: ending a leg is not ending the shift. They are two different buttons.
+Another run to make? Hold to start next leg. Going home? End shift.
 -->
 
 ---
@@ -191,17 +191,17 @@ clicks: 2
 ## Undo — take back a wrong mark
 
 <Walk :frames="[
-  { src: 'driver/13-undo.png', cap: 'Undo sa toast', tap: { x: 84.4, y: 94.3 } },
-  { src: 'driver/18-undo-done.png', cap: 'Nabawi ang marka',
+  { src: 'driver/13-undo.png', cap: 'Undo in the toast', tap: { x: 84.4, y: 94.3 } },
+  { src: 'driver/18-undo-done.png', cap: 'Mark taken back',
     ring: { x: 50, y: 94.6, w: 90.6, h: 6.5, tone: 'good', text: 'Undone' } },
 ]" />
 
-<div class="hint warn">Ang huli lang ang mababawi, at hindi kasama ang panimulang hintuan — doon, tapusin na lang ang trip.</div>
+<div class="hint warn">Only the last mark can be taken back, and never the starting stop — there, just end the trip.</div>
 
 <!--
-Toast lang ito — may window, mga labinlimang segundo, tapos mawawala.
-Lumipas na? Mag-message na lang sa dispatch.
-At hindi mababawi ang panimulang hintuan — kung mali ang pagsisimula, tapusin na lang ang trip.
+It is only a toast — a window of about fifteen seconds, then it is gone.
+Missed it? Message dispatch instead.
+And the starting stop cannot be taken back — if the trip started wrong, just end it.
 -->
 
 ---
@@ -214,16 +214,16 @@ clicks: 2
 
 <Walk :frames="[
   { src: 'driver/14-sos.png', tour: [
-    { x: 50, y: 91.9, w: 90, h: 4.8, tone: 'stop', text: 'SOS — agad na alerto', at: 'left' },
+    { x: 50, y: 91.9, w: 90, h: 4.8, tone: 'stop', text: 'SOS — alerts at once', at: 'left' },
     { x: 50, y: 97.2, w: 35.3, h: 3.5, text: 'Report issue', at: 'right' },
   ] },
 ]" />
 
-<div class="hint warn">Aksidente o emergency? Tumawag pa rin. Huwag umasa sa app lang.</div>
+<div class="hint warn">Accident or emergency? Still make the call. Do not rely on the app alone.</div>
 
 <!--
-SOS para sa panganib. Report issue para sa trapiko, sirang kalsada, o makina.
-Pero sa totoong aksidente — tumawag pa rin. Huwag umasa sa app lang.
+SOS is for danger. Report issue is for traffic, a broken road, or the engine.
+But in a real accident — still make the call. Do not rely on the app alone.
 -->
 
 ---
@@ -236,17 +236,17 @@ clicks: 1
 ## Replies are in
 
 <Walk :frames="[
-  { src: 'driver/09-messages.png', cap: 'Mula sa dispatch' },
-  { src: 'driver/16-messages-reply.png', cap: 'Sagot at mute',
-    ring: { x: 43.9, y: 87.6, w: 80.6, h: 4.9, tone: 'good', text: 'Sagot dito' } },
+  { src: 'driver/09-messages.png', cap: 'From dispatch' },
+  { src: 'driver/16-messages-reply.png', cap: 'Reply and mute',
+    ring: { x: 43.9, y: 87.6, w: 80.6, h: 4.9, tone: 'good', text: 'Reply here' } },
 ]" />
 
-<div class="hint warn">Huwag magbasa habang nagmamaneho. Nandiyan pa rin ito pagtigil niyo.</div>
+<div class="hint warn">Do not read while driving. It will still be there when you stop.</div>
 
 <!--
-Bago ito: pwede na silang sumagot, hindi na basa lang. May quick replies para mabilis.
-May mute din kung masyadong maingay.
-Ulitin: huwag magbasa habang nagmamaneho. Nandiyan pa rin iyan pagtigil.
+This is new: they can reply now, not just read. There are quick replies to keep it fast.
+There is a mute as well if it gets too noisy.
+Say it again: do not read while driving. It will still be there when you stop.
 -->
 
 ---
@@ -259,12 +259,12 @@ clicks: 2
 
 <Walk :frames="[
   { src: 'driver/10-schedule.png', cap: 'Schedule — All · AM · PM', tap: { x: 70.4, y: 92 } },
-  { src: 'driver/11-history.png', cap: 'History — tagal at pasahero' },
+  { src: 'driver/11-history.png', cap: 'History — duration and passengers' },
 ]" />
 
 <!--
-Schedule — ang mga paparating na shift. History — ang mga tapos na, kasama ang tagal at bilang ng pasahero.
-Dito nila matitingnan ang sarili nilang record.
+Schedule — the shifts coming up. History — the finished ones, with duration and passenger count.
+This is where they can check their own record.
 -->
 
 ---
@@ -279,9 +279,9 @@ class: tint
   { src: 'driver/12-settings.png', cap: 'Profile · app version · sign out' },
 ]" />
 
-<div class="hint warn">Huwag mag-sign out sa gitna ng shift — hindi nito tinatapos ang trip.</div>
+<div class="hint warn">Do not sign out mid-shift — it does not end the trip.</div>
 
 <!--
 Profile, app version, sign out.
-Diinan: huwag mag-sign out sa gitna ng shift. Hindi nito tinatapos ang trip — iiwan lang itong bukas sa system.
+Stress this: do not sign out in the middle of a shift. It does not end the trip — it just leaves it open in the system.
 -->
