@@ -1,0 +1,22 @@
+{
+  "name": "libreng-sakay-driver-guide",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "slidev build",
+    "dev": "slidev --open",
+    "export": "slidev export --wait 4000",
+    "check": "node tools/check-clicks.mjs pages/01-driver.md pages/02-kiosk.md",
+    "check:align": "node tools/check-alignment.mjs"
+  },
+  "dependencies": {
+    "@slidev/cli": "^53.0.0",
+    "@slidev/theme-default": "latest",
+    "@slidev/theme-seriph": "latest",
+    "gsap": "^3.15.0",
+    "vue": "^3.5.33"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.64.0"
+  }
+}

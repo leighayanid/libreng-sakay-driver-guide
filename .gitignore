@@ -1,0 +1,9 @@
+*.local
+.DS_Store
+.remote-assets
+.scratch-build
+.scratch-shots
+.vite-inspect
+components.d.ts
+dist
+node_modules
